@@ -3,11 +3,30 @@ let context = canvas.getContext('2d');
 let imageQuadtree;
 const options = {};
 
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    document.body.addEventListener(eventName, preventDefaults, false)
+});
+  
+function preventDefaults (e) {
+    e.preventDefault();
+    e.stopPropagation();
+}
+
+document.body.addEventListener('drop', (e) => {
+    let dt = e.dataTransfer
+    let files = dt.files
+    var reader = new FileReader();
+    reader.onload = function (event) {
+        loadImage(event.target.result);
+    }
+    reader.readAsDataURL(files[0]);
+}, false)
+
 buildOptions();
 setupGUI();
-loadImage();
+loadImage('img/leopard.jpg');
 
-function loadImage()
+function loadImage(url)
 {
   let base_image = new Image();
   base_image.onload = function() {
@@ -17,7 +36,7 @@ function loadImage()
     context.drawImage(base_image, 0, 0);
     initialize();
   }
-  base_image.src = '/img/leopard.jpg';
+  base_image.src = url;
 }
 
 

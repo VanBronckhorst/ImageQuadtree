@@ -105,6 +105,10 @@ body {
     color: black;
 }
 
+.framed {
+    border: #FFF 4px solid;
+}
+
 
 
 .name-title {

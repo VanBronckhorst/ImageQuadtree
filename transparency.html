@@ -6,9 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
         <link href="css/style.css" rel="stylesheet">
-        <script src="https://unpkg.com/avl"></script>
         <script type="text/javascript" src="lib/dat.gui.js"></script>
-        <script src="js/ImageQuadTree.js"></script>
+        <script type="text/javascript" src="js/ImageCanvas.js"></script>
     </head>
     <body>
     <div class="container">
@@ -16,13 +15,7 @@
             <a href="http://www.filippopellolio.com" class="name-title">Filippo Pellolio</a>
             <a class="name-title"></a>
         </div>
-        <canvas id="source" height="1024" width="1024"></canvas>
-        <div id="viz" class="viz">
-            
-            
-        </div>
-        <div id="options" class="options">
-        </div>
-        <script src="js/main.js"></script>
+        <canvas id="source" class="framed" height="300" width="300"></canvas>
+        <script src="js/transp.js"></script>
     </body>
 </html>
